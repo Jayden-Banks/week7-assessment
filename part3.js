@@ -17,8 +17,8 @@ const sumZero = arr => {
   };
   return false
 }
-const array = [ 1, 5, 0, 1, -5]
-console.log(sumZero(array))
+// const array = [ 1, 5, 0, 1, -5]
+// console.log(sumZero(array))
 
 
 // Question 2 complexity log(n) cache can only get to 26 letters at most and after that it will always be false so thats when the work will top out
@@ -38,12 +38,10 @@ const uniq = str => {
 // Question 3 complexity O(N) it depends on the string length sent in and worst case is that there are never 26 unique characters so it could iterate through the whole array in a worst case.
 // Works with spaces and special characters!
 const para = sent => {
-  // let alpha = [a,b,c,d,e,f,g,h,i,]
-  cache = []
-  console.log(sent)
+  let cache = []
   for (let i=0; i<sent.length; i++) {
     char = sent[i].toLowerCase()
-    if (!(/[a-zA-Z]/).test(char)) continue
+    if (!(/[a-z]/).test(char)) continue
     else if (cache.includes(char)) continue
     else cache.push(char)
 
@@ -52,8 +50,8 @@ const para = sent => {
   return false
 }
 
-// const sentance = "The quick brown fox jumps over the lazy dog"
-// console.log(para(sentance))
+const sentence = "The quick brown fox jumps over the lazy dog"
+console.log(para(sentence))
 
 // Question 4 complexity O(N) because it's dependent on how long the array argument is
 // Quick and easy. I liked this one too. 
